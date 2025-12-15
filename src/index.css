@@ -1,0 +1,181 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom body styling to ensure full coverage and correct font */
+body {
+  /* Using @apply ensures Tailwind processes this */
+  @apply bg-neutral-900; 
+}
+
+/* Custom CSS to create the jagged/spike effect */
+.clip-path-jagged {
+    /* Creates a rough, diagonal, spiked edge on the top-right corner */
+    clip-path: polygon(
+        0% 0%, 
+        100% 0%, 
+        100% 50%, 
+        80% 60%, 
+        100% 70%, 
+        80% 80%, 
+        100% 90%, 
+        80% 100%, 
+        0% 100%
+    );
+
+/* Ensure these styles are in your src/index.css */
+
+/* 1. MESSY BORDER: Gives the hand-drawn, offset third outline */
+.messy-border {
+    position: relative;
+    overflow: visible !important; 
+}
+
+.messy-border::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 3px solid black; 
+    transform: translate(5px, 5px) scale(1.03);
+    z-index: -1; 
+}
+
+/* 2. TEXT SHADOW: Gives the text the sharp red outline/glow */
+.text-shadow-red {
+    text-shadow: 
+        1px 1px 0px #ef4444, 
+        -1px -1px 0px #ef4444, 
+        1px -1px 0px #ef4444, 
+        -1px 1px 0px #ef4444;
+}
+
+/* Ensure these styles are in your src/index.css */
+.messy-border {
+    position: relative;
+    overflow: visible !important; 
+}
+
+.messy-border::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 3px solid black; 
+    transform: translate(5px, 5px) scale(1.03);
+    z-index: -1; 
+}
+/* ... and other utilities like text-shadow-red */
+
+/* Add this block to your src/index.css */
+
+/* 1. Animated Text Shadow */
+.animated-text-shadow {
+    animation: flicker-shadow 1.5s infinite alternate;
+}
+
+@keyframes flicker-shadow {
+    0% {
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.7), 0 0 10px rgba(255, 0, 0, 0.5);
+    }
+    50% {
+        text-shadow: 0 0 8px rgba(255, 255, 255, 0.9), 0 0 15px rgba(255, 0, 0, 0.7);
+    }
+    100% {
+        text-shadow: 0 0 4px rgba(255, 255, 255, 0.6), 0 0 8px rgba(255, 0, 0, 0.4);
+    }
+}
+
+/* Add this block to your src/index.css */
+
+/* 1. Animated Border Flicker */
+.flicker-border {
+    animation: flicker-border 1s infinite alternate;
+}
+
+@keyframes flicker-border {
+    0% {
+        box-shadow: 0 0 0 rgba(255, 0, 0, 0), 0 0 0 rgba(0, 0, 0, 0);
+        border-color: black;
+    }
+    50% {
+        box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+        border-color: #ef4444; /* Red */
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(255, 0, 0, 0.2);
+        border-color: black;
+    }
+}
+/* Ensure you already have animated-text-shadow and text-shadow-red here too! */
+
+/* Add this block to your src/index.css */
+
+/* 3. Text Glitch Effect (NEW) */
+.glitch-text {
+  /* Ensure the text is visible */
+  position: relative;
+  overflow: hidden;
+}
+
+/* This animation simulates a brief text shift/glitch on hover */
+.glitch-text:hover {
+    animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+/* Add/Ensure this block is in src/index.css */
+
+/* 1. Text Glitch Effect */
+.glitch-text {
+  position: relative;
+  overflow: hidden;
+  animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+}

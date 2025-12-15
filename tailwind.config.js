@@ -1,11 +1,18 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    "./index.html",           // scans your root HTML
-    "./src/**/*.{js,jsx,ts,tsx}", // scans all React components
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},               // for custom colors, fonts, etc.
+    extend: {
+      fontFamily: {
+        sans: ["Bebas Neue", "sans-serif"],
+      },
+      lineHeight: {
+        "extra-tight": "0.9",
+      },
+    },
   },
-  plugins: [],               // add Tailwind plugins if needed
-}
+  plugins: [],
+};
