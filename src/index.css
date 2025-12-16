@@ -178,4 +178,54 @@ body {
   }
 }
 
+@keyframes p5-flicker {
+    0%, 100% { box-shadow: 0 0 0px transparent; }
+    5% { box-shadow: 0 0 15px rgba(255, 0, 0, 0.8), 0 0 5px rgba(0, 0, 0, 1); }
+    10% { box-shadow: 0 0 0px transparent; }
+    15% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); }
+    20% { box-shadow: 0 0 0px transparent; }
+}
+
+.flicker-shadow {
+    animation: p5-flicker 4s infinite step-end;
+}
+
+/* --- Required Custom CSS (For the scanline effect) --- */
+@keyframes scanline-move {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(100%); }
+}
+
+.scanline::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10px; /* Thickness of the scanline */
+    background: repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.4) 5px);
+    animation: scanline-move 0.15s linear infinite; /* Very fast, linear loop */
+    pointer-events: none;
+    mix-blend-overlay: color-dodge;
+}
+
+/* --- Required Custom CSS (For perpetual motion) --- */
+@keyframes p5-drift {
+    0% { transform: translate(1px, 1px) rotate(0.1deg); }
+    50% { transform: translate(-1px, -1px) rotate(-0.1deg); }
+    100% { transform: translate(1px, 1px) rotate(0.1deg); }
+}
+@keyframes p5-jitter {
+    0%, 100% { transform: translate(0, 0); }
+    10%, 30%, 50%, 70%, 90% { transform: translate(-0.5px, -0.5px); }
+    20%, 40%, 60%, 80% { transform: translate(0.5px, 0.5px); }
+}
+
+.drift-anim {
+    animation: p5-drift 10s ease-in-out infinite alternate;
+}
+.jitter-anim {
+    animation: p5-jitter 0.1s infinite;
+}
+
 }
