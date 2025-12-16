@@ -465,13 +465,13 @@ function Journals() {
         { src: "mata.jfif", caption: "Log 04: MATA TECHNOLOGIES, INC.", date: "11/21/2025", isSpotlight: true },
         { src: "tarsier.jpg", caption: "Log 05: T.A.R.S.I.E.R 117", date: "11/22/2025", isSpotlight: true },
         
-        { src: "pic1.jfif", caption: "Fragment 01", date: "11/19/2025" },
-        { src: "pic2.jpeg", caption: "Fragment 02", date: "11/20/2025" },
-        { src: "pic3.jpeg", caption: "Fragment 03", date: "11/20/2025" },
-        { src: "pic4.jpeg", caption: "Fragment 04", date: "11/22/2025" },
-        { src: "pic5.jpeg", caption: "Fragment 05", date: "11/22/2025" },
-        { src: "pic6.jfif", caption: "Fragment 06", date: "11/21/2025" }, 
-        { src: "pic7.jfif", caption: "Fragment 07", date: "11/19/2025" }, 
+        { src: "1.jfif", caption: "Fragment 01", date: "11/19/2025" },
+        { src: "2.jfif", caption: "Fragment 02", date: "11/20/2025" },
+        { src: "3.jfif", caption: "Fragment 03", date: "11/20/2025" },
+        { src: "4.jfif", caption: "Fragment 04", date: "11/22/2025" },
+        { src: "5.jfif", caption: "Fragment 05", date: "11/22/2025" },
+        { src: "6.jfif", caption: "Fragment 06", date: "11/21/2025" }, 
+        { src: "7.jfif", caption: "Fragment 07", date: "11/19/2025" }, 
     ];
 
     const spotlightPhotos = allPhotos.slice(0, 5);
